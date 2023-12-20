@@ -36,6 +36,8 @@ for i in range(len(df_leagues)):
 # Create Dash app
 app = dash.Dash(__name__)
 
+server = app.server
+
 # Define layout
 app.layout = html.Div(
     children=[
