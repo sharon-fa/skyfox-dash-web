@@ -14,7 +14,7 @@ df = pd.read_csv(file_path)
 colors = ['red' if close < open else 'green' for close, open in zip(df['close'], df['open'])]
 
 # Data for league stats
-df_leagues = pd.read_excel('data/stats.xlsx')
+df_leagues = pd.read_excel('data/league_stats.xlsx')
 
 # Format strings for display 
 strings = {}
@@ -25,7 +25,7 @@ for i in range(len(df_leagues)):
     push = df_leagues.loc[i,'Push']
     winrate = df_leagues.loc[i,'Win%']
     earnings = df_leagues.loc[i,'Earnings']
-    earnings = '${:,.2f}'.format(earnings)
+    # earnings = '${:,.2f}'.format(earnings)
     str_name = f'str_{league}'
     if league == 'all':
         strings[str_name] = f'{win}-{loss}-{push} | {winrate} | {earnings}'
